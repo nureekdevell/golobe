@@ -1,29 +1,33 @@
 <template>
-  <div class="flex justify-between w-full h-full">
-    <div>
-      <router-link to="/"><img src="../assets/icons/Group.svg" alt="" /></router-link>
-    </div>
+  <div class="flex container justify-between w-full max-h-full">
     <div class="w-1/2">
-      <el-carousel interval="4000" class="rounded-3xl bg-no-repeat bg-center" height="800px">
-        <el-carousel-item v-for="image of images" :key="image">
-          <img style="height: 100%" :src="image" alt="" />{{ image }}
-        </el-carousel-item>
-      </el-carousel>
+      <router-link to="/"><img src="../assets/icons/Group.svg" alt="" /></router-link>
+      <div class="login">
+        <h2 class="text-2xl font-semibold">Login</h2>
+        <span class="text-sm text-gray-500">Login to access your Golobe account</span>
+        <n-button> Success </n-button>
+        <n-button native type="error"> Error </n-button>
+        <n-button tertiary type="primary"> Primary </n-button>
+
+        <n-button color="#8a2be2">
+          <template #icon>
+            <n-icon>
+              <cash-icon />
+            </n-icon>
+          </template>
+          #8a2be2
+        </n-button>
+        <n-button strong secondary type="tertiary"> Tertiary </n-button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
-
-const formLabelAlign = reactive({
-  name: '',
-  region: '',
-  type: ''
-})
-import img1 from '../assets/bench.jpeg'
-import img2 from '../assets/pool.jpeg'
-import img3 from '../assets/maldives.jpeg'
+import img1 from '../assets/1.png'
+import img2 from '../assets/2.jpeg'
+import img3 from '../assets/3.jpeg'
+import { NButton } from 'naive-ui'
 
 const images = [img1, img2, img3]
 </script>
